@@ -27,8 +27,9 @@ app.get('/', function(req, res, next) {
 					if(response) {
 						console.log(response.statusCode);
 					}
-					next(err);
+
 				}
+				next(err);
 			}
 		}
 	});
