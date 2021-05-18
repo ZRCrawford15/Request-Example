@@ -18,7 +18,7 @@ app.get('/', function(req, res, next) {
 			context.owm1 = body;
 
 			//second request
-			request('http://api.openweathermap.org/data/2.5/weather?q=Denver&APPID=' + key) {
+			request('http://api.openweathermap.org/data/2.5/weather?q=Denver&APPID=' + key, function(err, res,next) {
 				if (!err && response.statusCode < 400) {
 					context.owm2 = body;
 					res.render('weather', context);
