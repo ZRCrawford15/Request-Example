@@ -19,7 +19,7 @@ app.get('/', function(req, res, next) {
 
 			//second request
 			request('http://api.openweathermap.org/data/2.5/weather?q=Denver&APPID=' + key, function(err, res, body) {
-				if (!err && resp.statusCode < 400) {
+				if (!err && res.statusCode < 400) {
 					context.owm2 = body;
 					res.render('weather', context);
 				} else {
