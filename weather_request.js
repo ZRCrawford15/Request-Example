@@ -13,12 +13,12 @@ let key = 'd38e842ac476454d18109f49c5cef3e6';
 
 app.get('/', function(req, res, next) {
 	let context = {};
-	request('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=' + key, function(err, res, next){
+	request('http://api.openweathermap.org/data/2.5/weather?q=London&APPID=' + key, function(err, res, body){
 		if (!err && res.statusCode < 400) {
 			context.owm1 = body;
 
 			//second request
-			request('http://api.openweathermap.org/data/2.5/weather?q=Denver&APPID=' + key, function(err, res, next) {
+			request('http://api.openweathermap.org/data/2.5/weather?q=Denver&APPID=' + key, function(err, res, body) {
 				if (!err && resp.statusCode < 400) {
 					context.owm2 = body;
 					res.render('weather', context);
